@@ -1,0 +1,60 @@
+<html>
+<head>
+  <title>W3.CSS</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+  <style>
+    .mySlides {
+      display: none;
+      width: 100%;
+    }
+  </style>
+</head>
+
+<body>
+
+<h2 class="w3-center">Click Through Slideshow</h2>
+
+<div class="w3-content w3-display-container">
+  <img class="mySlides" src="images/image_1.jpg">
+  <img class="mySlides" src="images/image_2.jpg">
+  <img class="mySlides" src="images/image_3.jpg">
+
+  <button class="w3-button w3-black w3-display-left" onclick="plusDivs(-1)">&#10094;</button>
+  <button class="w3-button w3-black w3-display-right" onclick="plusDivs(1)">&#10095;</button>
+</div>
+
+<script>
+    
+var slideIndex = 0;
+    
+showDivs(slideIndex);
+    
+function plusDivs(n){
+    slideIndex = slideIndex + n;
+    showDivs(slideIndex);
+}
+
+function showDivs(theIndex) {
+        var x = document.getElementsByClassName("mySlides");
+    
+        var highestIndex = x.length - 1;
+        
+        if (theIndex > highestIndex) {slideIndex = 0};
+    
+        if (theIndex < 0) {slideIndex = highestIndex};
+    
+        for (i=0; i<x.length; i++) {
+            x[i].style.display = "none";
+        }
+        
+        x[slideIndex].style.display = "block";
+    }
+    
+//1. We start by declaring what image should display first. 
+//2. Next we will call a function to show the next image that is triggered by an event declared above. 
+//3. Now we need to tell the computer to hide all images except the one we want to see. 
+</script>
+
+</body>
+</html>
